@@ -1,0 +1,22 @@
+@font-face {
+  font-family: "semiBold";
+  src: url("./assets//BarlowSemiCondensed-SemiBold.ttf");
+}
+
+@font-face {
+  font-family: "bold";
+  src: url("./assets/BarlowSemiCondensed-Bold.ttf");
+}
+
+body {
+  background: linear-gradient(0deg,  hsl(237, 49%, 15%), hsl(214, 47%, 23%));
+  margin: 0;
+  height: 105vh;
+}
+
+.scoreContainer {
+  display: flex;
+  justify-content: center; 
+  align-items: center; 
+}
+
