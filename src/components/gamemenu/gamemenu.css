@@ -1,0 +1,89 @@
+.componentToRenderContainer {
+    margin-left: 25%;
+    margin-top: 150px;
+    width: 200px;
+    
+}
+
+.youPickedContainer {
+    text-align: center;
+    margin-right: 35%;
+    margin-top: 20px;
+    color: white;
+    font-family: "semiBold"; 
+    letter-spacing: 2px;
+  }
+
+  .cpuComponentToRenderContainer {
+    width: 100px;
+    height: 100px;
+    border-radius: 60px;
+    margin-left: 65%;
+    margin-top: -140px;
+    background-color: hsl(214, 60%, 14%);
+  }
+
+  .theHousePickedContainer {
+    text-align: center;
+    margin-top: 20px;
+    color: white;
+    margin-right: 50px;
+    font-family: "semiBold"; 
+    letter-spacing: 2px;
+    position: absolute;
+
+  }
+
+  .resultContainer {
+    justify-content: center;
+    margin-left: 40%;
+    margin-top: 60px;
+  }
+
+  .resultMessageContainer {
+    color: white;
+    font-family: bold;
+    font-size: 60px;
+  }
+
+  .playAgainContainer {
+    color: hsl(229, 25%, 31%);
+    padding: 15px;
+    width: 200px;
+    text-align: center;
+    margin-right: 50px;
+    margin-top: 20px;
+    background-color: white;
+    border-radius: 10px;
+    font-family: bold; 
+    letter-spacing: 2px;
+    cursor: pointer;
+  }
+
+  .rulesContainer {
+    color: white;
+    border: 1px solid;
+    width: 100px;
+    padding: 12px;
+    text-align: center;
+    border-radius: 10px;
+    font-family: "semiBold";
+    letter-spacing: 3px;
+    margin-left: 45%;
+    position: relative;
+    bottom: 0;
+    margin-top: 80px;
+    cursor: pointer;
+  }
+
+  @media (min-width: 1300px) {
+    .youPickedContainer {
+        text-align: center;
+        margin-top: -300px;
+        margin-left: 70px;
+        color: white;
+        font-family: "semiBold"; 
+        letter-spacing: 2px;
+        position: absolute;
+    }
+  }

@@ -20,6 +20,7 @@ function Score() {
             display: "flex",
             justifyContent: "space-between",
             minWidth: "300px",
+            maxWidth:"720px"
           }}
         >
           <div

@@ -2,19 +2,24 @@ import React, { useState, useEffect, useContext } from "react";
 import Paper from "../paper/paper";
 import Rock from "../rock/rock";
 import Scissor from "../scissor/scissor";
+import PaperWeb from "../paper/paperWeb";
+import ScissorWeb from "../scissor/scissorWeb";
+import RockWeb from "../rock/rockWeb";
 import { Link } from "react-router-dom";
 import { GameContext } from "../../context/gamecontext";
 import { ScoreContext } from "../../context/scorecontext";
 import Rules from "../rules/rules";
+import "./gamemenu.css";
 
 function GameMenu() {
   const [showRules, setShowRules] = useState(false);
   const [cpuChoice, setCpuChoice] = useState("");
   const [resultMessage, setResultMessage] = useState("");
   const [componentToRender, setComponentToRender] = useState(null);
+  const [componentToRenderWeb, setComponentToRenderWeb] = useState(null);
   const [cpuComponentToRender, setCpuComponentToRender] = useState(null);
-  
-  const { punctuation, setPunctuation } = useContext(ScoreContext); 
+  const [cpuComponentToRenderWeb, setCpuComponentToRenderWeb] = useState(null);
+  const { punctuation, setPunctuation } = useContext(ScoreContext);
   const { selectedItem } = useContext(GameContext);
 
   function handleRules() {
@@ -29,12 +34,15 @@ function GameMenu() {
     switch (selectedItem) {
       case "paper":
         setComponentToRender(<Paper />);
+        setComponentToRenderWeb(<PaperWeb />);
         break;
       case "rock":
         setComponentToRender(<Rock />);
+        setComponentToRenderWeb(<RockWeb />);
         break;
       case "scissor":
         setComponentToRender(<Scissor />);
+        setComponentToRenderWeb(<ScissorWeb />);
         break;
     }
   }
@@ -48,12 +56,15 @@ function GameMenu() {
     switch (selectedOption) {
       case "paper":
         setCpuComponentToRender(<Paper />);
+        setCpuComponentToRenderWeb(<PaperWeb />);
         break;
       case "rock":
         setCpuComponentToRender(<Rock />);
+        setCpuComponentToRenderWeb(<RockWeb />);
         break;
       case "scissor":
         setCpuComponentToRender(<Scissor />);
+        setCpuComponentToRenderWeb(<ScissorWeb />);
         break;
     }
   }
@@ -102,103 +113,36 @@ function GameMenu() {
 
   return (
     <>
-      <div style={{ marginLeft: "25%", marginTop: "150px" }}>
-        {componentToRender}
+      <div className="componentToRenderContainer">
+        {window.innerWidth >= 1300 ? componentToRenderWeb : componentToRender}
+      <div className="youPickedContainer">YOU PICKED </div>
+      </div>
+      <div className="cpuComponentToRenderContainer">
+      {window.innerWidth >= 1300 ? cpuComponentToRenderWeb : cpuComponentToRender}
+      <div className="theHousePickedContainer">THE HOUSE PICKED </div>
       </div>
       <div
+        className="resultContainer"
         style={{
-          textAlign: "center",
-          marginRight: "35%",
-          marginTop: "20px",
-          color: "white",
-          fontFamily: "semiBold",
-          letterSpacing: "2px",
-        }}
-      >
-        YOU PICKED{" "}
-      </div>
-      <div
-        style={{
-          width: "100px",
-          height: "100px",
-          borderRadius: "60px",
-          marginLeft: "65%",
-          marginTop: "-140px",
-          backgroundColor: "hsl(214, 60%, 14%)",
-        }}
-      >
-        {cpuComponentToRender}
-      </div>
-      <div
-        style={{
-          textAlign: "center",
-          marginLeft: "45%",
-          marginTop: "20px",
-          color: "white",
-          fontFamily: "semiBold",
-          letterSpacing: "2px",
-        }}
-      >
-        THE HOUSE PICKED{" "}
-      </div>
-      <div
-        style={{
-          justifyContent: "center",
-          marginLeft: "40%",
-          marginTop: "60px",
           display: resultMessage === "" ? "none" : "",
         }}
       >
         <span
+          className="resultMessageContainer"
           style={{
-            color: "white",
-            fontFamily: "bold",
-            fontSize: "60px",
             marginLeft: resultMessage === "DRAW" ? "40px" : "0px",
           }}
         >
           {resultMessage}
         </span>
         <Link to="/initialPage" style={{ textDecoration: "none" }}>
-          <div
-            style={{
-              color: "hsl(229, 25%, 31%)",
-              padding: "15px",
-              width: "200px",
-              textAlign: "center",
-              marginRight: "50px",
-              marginTop: "20px",
-              backgroundColor: "white",
-              borderRadius: "10px",
-              fontFamily: "bold",
-              letterSpacing: "2px",
-              cursor: "pointer",
-            }}
-            onClick={handlePlayAgain}
-          >
+          <div className="playAgainContainer" onClick={handlePlayAgain}>
             PLAY AGAIN
           </div>
         </Link>
       </div>
 
-      <div
-        style={{
-          color: "white",
-          border: "1px solid",
-          width: "100px",
-          padding: "12px",
-          textAlign: "center",
-          borderRadius: "10px",
-          fontFamily: "semiBold",
-          letterSpacing: "3px",
-          marginLeft: "45%",
-          position: "relative",
-          bottom: "0",
-          marginTop: "80px",
-          cursor: "pointer",
-        }}
-        onClick={handleRules}
-      >
+      <div className="rulesContainer" onClick={handleRules}>
         RULES
       </div>
       <Rules showRules={showRules} closeRules={closeRules} />
