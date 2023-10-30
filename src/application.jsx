@@ -1,5 +1,5 @@
 import "./application.css"
-import Router from './Router/Router'
+import Router from "./router/Router"
 import { RouterProvider } from 'react-router-dom'
 import { GameContext } from "./context/gamecontext.js"
 import { ScoreContext } from "./context/scorecontext.js" 
