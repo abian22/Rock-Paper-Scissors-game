@@ -1,17 +1,42 @@
 .componentToRenderContainer {
     margin-left: 25%;
-    margin-top: 150px;
-    width: 200px;
+    margin-top: 140px;
+    width: 300px;
     
 }
 
 .youPickedContainer {
     text-align: center;
-    margin-right: 35%;
+    margin-right: 160px;
     margin-top: 20px;
     color: white;
     font-family: "semiBold"; 
     letter-spacing: 2px;
+    
+  }
+  
+  .winMe {
+    height: 450px;
+    width: 450px;
+    position: absolute;
+    margin-left: -165px;
+    border-radius: 100%;
+    margin-top: -281px;
+    background: radial-gradient(
+      circle at center,
+      transparent 18%,
+      rgba(154, 157, 246, 0.316) 10%,
+      transparent 20.5%,
+      rgba(180, 182, 235, 0.303) 20%,
+      transparent 20.5%,
+      rgba(123, 127, 238, 0.193) 30%,
+      transparent 20.5%,
+      rgba(102, 106, 219, 0.181) 40%,
+      transparent 20.5%,
+      rgba(102, 106, 219, 0.04) 50%,
+      transparent 20.5%,
+      transparent 80%
+    );
   }
 
   .cpuComponentToRenderContainer {
@@ -19,8 +44,9 @@
     height: 100px;
     border-radius: 60px;
     margin-left: 65%;
-    margin-top: -140px;
+    margin-top: -165px;
     background-color: hsl(214, 60%, 14%);
+    
   }
 
   .theHousePickedContainer {
@@ -37,7 +63,7 @@
   .resultContainer {
     justify-content: center;
     margin-left: 40%;
-    margin-top: 60px;
+    margin-top: 150px;
   }
 
   .resultMessageContainer {
@@ -55,9 +81,14 @@
     margin-top: 20px;
     background-color: white;
     border-radius: 10px;
-    font-family: bold; 
+    font-family: "bold";  
     letter-spacing: 2px;
     cursor: pointer;
+    transition: color 0.3s; 
+  }
+
+  .playAgainContainer:hover {
+    color: red;
   }
 
   .rulesContainer {
@@ -85,5 +116,70 @@
         font-family: "semiBold"; 
         letter-spacing: 2px;
         position: absolute;
+    }
+    @media (min-width: 1300px) {
+      .youPickedContainer {
+          text-align: center;
+          margin-top: -300px;
+          margin-left: 70px;
+          color: white;
+          font-family: "semiBold"; 
+          letter-spacing: 2px;
+          position: absolute;
+      }
+  
+      .theHousePickedContainer{
+        text-align: center;
+        margin-top: -300px;
+        margin-left: 50px;
+        color: white;
+        font-family: "semiBold"; 
+        letter-spacing: 2px;
+        position: absolute;
+      }
+  
+      .cpuComponentToRenderContainer {
+        margin-top: -235px;
+        margin-left: 65%;
+        width: 220px;
+        height: 220px;
+        border-radius: 120px;
+      }
+      .rulesContainer {
+        position: absolute;
+        right: 0px;
+        bottom: 0px;
+        margin-bottom: 20px;
+        margin-right: 20px;
+    }
+    .resultContainer {
+      justify-content: center;
+      margin-left: 45%;
+      margin-top: -220px;
+    }
+  
+    .winMe {
+      height: 760px;
+      width: 650px;
+      position: absolute;
+      margin-left: -205px;
+      border-radius: 100%;
+      margin-top: -495px;
+      background: radial-gradient(
+        circle at center,
+        transparent 25%,
+        rgba(154, 157, 246, 0.316) 10%,
+        transparent 20.5%,
+        rgba(180, 182, 235, 0.303) 20%,
+        transparent 20.5%,
+        rgba(123, 127, 238, 0.193) 30%,
+        transparent 20.5%,
+        rgba(102, 106, 219, 0.181) 40%,
+        transparent 20.5%,
+        rgba(102, 106, 219, 0.04) 50%,
+        transparent 20.5%,
+        transparent 80%
+      );
+    }
     }
   }

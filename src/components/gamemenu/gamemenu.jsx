@@ -19,6 +19,9 @@ function GameMenu() {
   const [componentToRenderWeb, setComponentToRenderWeb] = useState(null);
   const [cpuComponentToRender, setCpuComponentToRender] = useState(null);
   const [cpuComponentToRenderWeb, setCpuComponentToRenderWeb] = useState(null);
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  const [myWin, setMyWin] = useState("")
+  const [cpuWin, setCpuWin] = useState("")
   const { punctuation, setPunctuation } = useContext(ScoreContext);
   const { selectedItem } = useContext(GameContext);
 
@@ -78,6 +81,7 @@ function GameMenu() {
       (selectedItem === "rock" && cpuChoice === "scissor")
     ) {
       setPunctuation(punctuation + 1);
+      setMyWin("win")
       setResultMessage("YOU WIN");
     } else if (
       (cpuChoice === "paper" && selectedItem === "rock") ||
@@ -85,12 +89,15 @@ function GameMenu() {
       (cpuChoice === "rock" && selectedItem === "scissor")
     ) {
       setResultMessage("YOU LOSE");
+      setCpuWin("win")
     } else setResultMessage("");
   }
 
   function handlePlayAgain() {
     setCpuComponentToRender(null);
     setResultMessage("");
+    setMyWin("")
+    setCpuWin("")
   }
 
   console.log("my choice:" + selectedItem);
@@ -109,18 +116,33 @@ function GameMenu() {
     result();
   }, [cpuChoice]);
 
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
   console.log("mensaje de resultado: " + resultMessage);
 
   return (
     <>
       <div className="componentToRenderContainer">
         {window.innerWidth >= 1300 ? componentToRenderWeb : componentToRender}
+        <div className="winMe" style={{ display: myWin === "win" ? "" : "none"}}/>
       <div className="youPickedContainer">YOU PICKED </div>
       </div>
       <div className="cpuComponentToRenderContainer">
+      <div className="winMe" style={{ display: cpuWin === "win" ? "" : "none"}}/>
       {window.innerWidth >= 1300 ? cpuComponentToRenderWeb : cpuComponentToRender}
-      <div className="theHousePickedContainer">THE HOUSE PICKED </div>
+      <div className="theHousePickedContainer" style={{display: cpuComponentToRenderWeb === null ? "none" : ""}}>THE HOUSE PICKED </div>
       </div>
+      
       <div
         className="resultContainer"
         style={{

@@ -14,6 +14,8 @@ function Rules({ showRules, closeRules }) {
             fontFamily: "bold",
             fontSize: "20px",
             textAlign: "center",
+            marginTop:"80px",
+            marginRight:"40px"
           }}
         >
           RULES
