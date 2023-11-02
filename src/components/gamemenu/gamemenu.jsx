@@ -123,9 +123,6 @@ function GameMenu() {
 
     window.addEventListener('resize', handleResize);
 
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
   }, []);
 
   console.log("mensaje de resultado: " + resultMessage);
@@ -138,8 +135,8 @@ function GameMenu() {
       <div className="youPickedContainer">YOU PICKED </div>
       </div>
       <div className="cpuComponentToRenderContainer">
-      <div className="winMe" style={{ display: cpuWin === "win" ? "" : "none"}}/>
       {window.innerWidth >= 1300 ? cpuComponentToRenderWeb : cpuComponentToRender}
+      <div className="winMe" style={{ display: cpuWin === "win" ? "" : "none"}}/>
       <div className="theHousePickedContainer" style={{display: cpuComponentToRenderWeb === null ? "none" : ""}}>THE HOUSE PICKED </div>
       </div>
       
