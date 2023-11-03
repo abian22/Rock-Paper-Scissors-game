@@ -174,21 +174,16 @@
     }
   }
 
-    @media (max-width: 389px) {
+    @media (max-width: 410px) {
       .resultContainer {
         justify-content: center;
         margin-top: 150px;
-        margin-left: -40px;
       }
       .resultMessageContainer {
         font-family: bold;
         font-size: 60px;
       }
       .playAgainContainer {
-      }
-
-      .theHousePickedContainer {
-        width:200px;
       }
 
       .cpuComponentToRenderContainer {
