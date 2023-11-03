@@ -178,14 +178,13 @@
       .resultContainer {
         justify-content: center;
         margin-top: 150px;
-        margin-left: 120px;
+        margin-left: 90px;
       }
       .resultMessageContainer {
         font-family: bold;
         font-size: 60px;
       }
       .playAgainContainer {
-        margin-left: -70px;
       }
 
       .theHousePickedContainer {
