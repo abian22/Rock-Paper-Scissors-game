@@ -174,16 +174,20 @@
     }
   }
 
-    @media (max-width: 410px) {
+    @media (max-width: 420px) {
       .resultContainer {
         justify-content: center;
         margin-top: 150px;
+        margin-left: 120px;
       }
       .resultMessageContainer {
         font-family: bold;
-        font-size: 60px;
+        font-size: 52px;
+    
+
       }
       .playAgainContainer {
+     
       }
 
       .cpuComponentToRenderContainer {
