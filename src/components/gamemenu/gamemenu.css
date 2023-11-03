@@ -185,6 +185,7 @@
         font-size: 60px;
       }
       .playAgainContainer {
+        margin-left: -70px;
       }
 
       .theHousePickedContainer {
